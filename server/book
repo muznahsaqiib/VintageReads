@@ -1,0 +1,273 @@
+import React from 'react';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image, ImageBackground } from 'react-native';
+
+const Library = ({ navigation }) => {
+    const books = [
+        {
+            id: 1,
+            title: 'Crime and Punishment',
+            author: 'Fyodor Dostoyevsky',
+            image: require('./assets/images/CnP.jpg'),
+            pdfLink: 'https://drive.google.com/file/d/1bpmr7SWgYcYEZcRALZJM7_3ZYGBh5dbf/view?usp=sharing',
+            description: 'A psychological novel that explores the moral dilemmas of its main character, Rodion Raskolnikov.',
+            summary: 'Raskolnikov, a young student, plans and commits a murder to prove his theory about extraordinary people.',
+            pages: 430,
+            rating: 4.5,
+            released: 1866,
+        },
+        {
+            id: 2,
+            title: 'Wuthering Heights',
+            author: 'Emily Bronte',
+            image: require('./assets/images/WH.jpeg'),
+            pdfLink: 'https://drive.google.com/file/d/1FfFSrpKjKCXejovm7sRyr2NhMAQh6Myk/view?usp=sharing',
+            description: 'A dark and tragic love story set on the Yorkshire moors.',
+            summary: 'The novel centers on Heathcliff and Catherine, whose passionate love leads to betrayal and heartbreak.',
+            pages: 400,
+            rating: 4.0,
+            released: 1847,
+        },
+        {
+            id: 3,
+            title: 'Pride and Prejudice',
+            author: 'Jane Austen',
+            image: require('./assets/images/PnP.jpg'),
+            pdfLink: 'https://drive.google.com/file/d/1Zt56rkQ6r1dFeWpZnQSK6K5THB19ibKj/view?usp=sharing',
+            description: 'A romantic novel that also critiques the social structures of early 19th-century England.',
+            summary: 'The story of Elizabeth Bennet and her complex relationship with the wealthy and proud Mr. Darcy.',
+            pages: 360,
+            rating: 4.7,
+            released: 1813,
+        },
+        {
+            id: 4,
+            title: 'Beloved',
+            author: 'Toni Morrison',
+            image: require('./assets/images/beloved.jpg'),
+            pdfLink: 'https://drive.google.com/file/d/1fY3_dcg3AYZQCgzEhKQ6BahhlhMTcOS2/view?usp=sharing',
+            description: 'A haunting tale of an escaped slave who is haunted by the ghost of her dead child.',
+            summary: 'Sethe, an escaped slave, lives with her daughter and mother-in-law, but is haunted by her past and a mysterious entity.',
+            pages: 324,
+            rating: 4.3,
+            released: 1987,
+        },
+        {
+            id: 5,
+            title: 'The Bloody Chamber',
+            author: 'Angela Carter',
+            image: require('./assets/images/TBC.jpeg'),
+            pdfLink: 'https://drive.google.com/file/d/1rDubUL_-WcIs3p1mtqm6K43t-YXwiQvV/view?usp=sharing',
+            description: 'A collection of short stories reimagining fairy tales with gothic and feminist themes.',
+            summary: 'Carter reinterprets traditional fairy tales, giving them dark and modern themes.',
+            pages: 176,
+            rating: 4.2,
+            released: 1979,
+        },
+        {
+            id: 6,
+            title: 'The Great Gatsby',
+            author: 'F. Scott Fitzgerald',
+            image: require('./assets/images/TGG.jpg'),
+            pdfLink: 'https://drive.google.com/file/d/1JJI144cuU8LgpNQcjdYiJ7_MErkvTctB/view?usp=sharing',
+            description: 'A novel about the American dream and the disillusionment of wealth and love.',
+            summary: 'The story of Jay Gatsby and his unrequited love for Daisy Buchanan in the Jazz Age.',
+            pages: 180,
+            rating: 4.4,
+            released: 1925,
+        },
+        {
+            id: 7,
+            title: 'Stoner',
+            author: 'John Williams',
+            image: require('./assets/images/stoner.jpg'),
+            pdfLink: 'https://drive.google.com/file/d/1XxaC1NMlPZVOVg31cYlBAeAvwaFjOWOz/view?usp=sharing',
+            description: 'The story of a quiet academic who faces disappointments and struggles with integrity.',
+            summary: 'William Stoner, a farmer\'s son, becomes a professor and encounters hardship in his personal and professional life.',
+            pages: 278,
+            rating: 4.3,
+            released: 1965,
+        },
+        {
+            id: 8,
+            title: 'Little Women',
+            author: 'Louisa May Alcott',
+            image: require('./assets/images/littlewomen.jpg'),
+            pdfLink: 'https://drive.google.com/file/d/1TfPYn5J51rr1vT32NLY2lMmkG7kgat5I/view?usp=sharing',
+            description: 'A story about the lives and growth of four sisters in 19th-century America.',
+            summary: 'Jo, Meg, Beth, and Amy March navigate love, loss, and societal expectations.',
+            pages: 759,
+            rating: 4.6,
+            released: 1868,
+        },
+        {
+            id: 10,
+            title: 'Jane Eyre',
+            author: 'Charlotte Bronte',
+            image: require('./assets/images/jane.jpeg'),
+            pdfLink: 'https://drive.google.com/file/d/19Mp-04yR39_K21iJT_C8FDP9bnarnvJC/view?usp=sharing',
+            description: 'The journey of an orphan girl who grows up to find love and independence.',
+            summary: 'Jane Eyre, a young orphan, faces hardships but finds strength and love at Thornfield Hall.',
+            pages: 532,
+            rating: 4.8,
+            released: 1847,
+        },
+        {
+            id: 11,
+            title: 'Frankenstein',
+            author: 'Mary Shelley',
+            image: require('./assets/images/frank.jpeg'),
+            pdfLink: 'https://drive.google.com/file/d/1WdBGJ4bKafAO1bSpL4mGjhtrLE-VHHl0/view?usp=sharing',
+            description: 'A classic Gothic novel about the dangers of ambition and the consequences of creating life.',
+            summary: 'Victor Frankenstein, a scientist, creates a sentient being, only to be horrified by his own creation.',
+            pages: 280,
+            rating: 4.5,
+            released: 1818,
+        },
+        {
+            id: 12,
+            title: '1984',
+            author: 'George Orwell',
+            image: require('./assets/images/1984.jpg'),
+            pdfLink: 'https://drive.google.com/file/d/1AdnPW005Hj3em4PEE0wKoyuDPa1hooN1/view?usp=sharing',
+            description: 'A dystopian novel that explores the dangers of totalitarianism and extreme political ideology.',
+            summary: 'Winston Smith lives in a society under constant surveillance and controlled by a totalitarian regime.',
+            pages: 328,
+            rating: 4.6,
+            released: 1949,
+        },
+        {
+            id: 13,
+            title: 'Catch-22',
+            author: 'Joseph Heller',
+            image: require('./assets/images/catch22.jpeg'),
+            pdfLink: 'https://drive.google.com/file/d/1aF-fVvj-CZQfscHIydRvizL4jktgwI6F/view?usp=sharing',
+            description: 'A satirical novel that portrays the absurdities of war and the concept of "Catch-22."',
+            summary: 'Captain John Yossarian tries to maintain his sanity while serving in World War II, trapped in a no-win situation.',
+            pages: 453,
+            rating: 4.2,
+            released: 1961,
+        },
+        {
+            id: 14,
+            title: 'Brave New World',
+            author: 'Aldous Huxley',
+            image: require('./assets/images/BNW.jpeg'),
+            pdfLink: 'https://drive.google.com/file/d/163aOepputLkDJwfxCWMWeWU1sie0wNOa/view?usp=sharing',
+            description: 'A dystopian novel that examines a future society controlled by technology and conditioned to pursue pleasure.',
+            summary: 'In a world where individuality is suppressed, Bernard Marx begins to question his society’s values.',
+            pages: 288,
+            rating: 4.3,
+            released: 1932,
+        },
+        {
+            id: 15,
+            title: 'All Quiet on the Western Front',
+            author: 'Erich Maria Remarque',
+            image: require('./assets/images/AQWF.jpeg'),
+            pdfLink: 'https://drive.google.com/file/d/11NBkIbdfiaIfljVqeKeOZ84a6cFdRZpI/view?usp=sharing',
+            description: 'A poignant novel depicting the harrowing experiences of German soldiers during World War I.',
+            summary: 'Paul Bäumer, a young German soldier, endures the physical and emotional toll of war on the Western Front.',
+            pages: 295,
+            rating: 4.6,
+            released: 1928,
+        },
+        
+        
+    ];
+    
+
+  const renderBookItem = ({ item }) => (
+    <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('BookDetail', {
+          title: item.title,
+          author: item.author,
+          image: item.image,
+          pdfLink: item.pdfLink,
+          description: item.description,
+          summary: item.summary,
+          pages: item.pages,
+          rating: item.rating,
+          released:item.released,
+        });
+      }}
+      style={styles.bookItem}
+    >
+      <Image source={item.image} style={styles.bookImage} />
+      <Text style={styles.bookTitle}>{item.title}</Text>
+      <Text style={styles.bookAuthor}>{item.author}</Text>
+    </TouchableOpacity>
+  );
+
+  return (
+    <ImageBackground
+      source={require('./assets/images/vintage-paper-bg.jpg')} // Same vintage background image
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.container}>
+        <FlatList
+          data={books}
+          renderItem={renderBookItem}
+          keyExtractor={(item) => item.id.toString()}
+          numColumns={3} // Display books in three columns
+          contentContainerStyle={styles.listContainer}
+        />
+      </View>
+    </ImageBackground>
+  );
+};
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  container: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: 'rgba(255, 255, 255, 0.7)', // Light overlay for vintage effect
+  },
+  listContainer: {
+    justifyContent: 'space-between',
+  },
+  bookItem: {
+    margin: 10,
+    width: '28%', // Adjust width to fit 3 books in a row
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 10,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+  },
+  bookImage: {
+    width: 110,
+    height: 160,
+    borderRadius: 5,
+    borderColor: '#D1A15A', // Vintage mustard yellow border
+    borderWidth: 2,
+  },
+  bookTitle: {
+    marginTop: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontFamily: 'OldNewspaperTypes', // Retro font
+    color: '#6b4f3d', // Deep brown for vintage look
+    marginBottom: 5,
+  },
+  bookAuthor: {
+    fontSize: 14,
+    color: '#777',
+    textAlign: 'center',
+    fontFamily: 'OldNewspaperTypes', // Retro font
+  },
+});
+
+export default Library;
+
