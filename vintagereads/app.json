@@ -12,14 +12,19 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.muznahsaqiib.vintagereads"
+      "package": "com.muznahsaqiib.vintagereads",
+      "permissions": [],
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -27,6 +32,14 @@
     "plugins": [
       "expo-font",
       "react-native-video"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "64bb0621-3de3-457c-8b52-8004a488f2d5"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/64bb0621-3de3-457c-8b52-8004a488f2d5"
+    }
   }
 }

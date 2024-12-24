@@ -1028,7 +1028,7 @@
     wrap-ansi "^7.0.0"
     ws "^8.12.1"
 
-"@expo/code-signing-certificates@^0.0.5":
+"@expo/code-signing-certificates@0.0.5", "@expo/code-signing-certificates@^0.0.5":
   version "0.0.5"
   resolved "https://registry.npmjs.org/@expo/code-signing-certificates/-/code-signing-certificates-0.0.5.tgz"
   integrity sha512-BNhXkY1bblxKZpltzAx98G2Egj9g1Q+JRcvR7E99DOj862FTCX+ZPsAUtPTr7aHxwtrL7+fL3r0JSmM9kBm+Bw==
@@ -3014,6 +3014,11 @@ applicationinsights@2.9.1:
     diagnostic-channel "1.1.1"
     diagnostic-channel-publishers "1.0.7"
 
+arg@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/arg/-/arg-4.1.0.tgz#583c518199419e0037abb74062c37f8519e575f0"
+  integrity sha512-ZWc51jO3qegGkVh8Hwpv636EkbesNV5ZNQPCtRa+0qytRYPEs9IYT9qITY9buezqUH5uqyzlWLcufrzU2rffdg==
+
 arg@^5.0.2:
   version "5.0.2"
   resolved "https://registry.npmjs.org/arg/-/arg-5.0.2.tgz"
@@ -4659,6 +4664,11 @@ expo-document-picker@~13.0.1:
   resolved "https://registry.npmjs.org/expo-document-picker/-/expo-document-picker-13.0.1.tgz"
   integrity sha512-M3O3SDqubsRbVyY+Xu6V45K0/G1S1IqEdmVAnPkOiUU2eIEFfF5oP4KON4CsvEhO9IIunnpRr/oq9NQxb3SrEA==
 
+expo-eas-client@~0.13.0:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/expo-eas-client/-/expo-eas-client-0.13.1.tgz#ebca627f3f58a54906394eb3f5d22f41a1822618"
+  integrity sha512-IyeDiM6YSJG0c45kbuEo0qt76z0KTEZtisEFEtle+b+vfn9I3N+r3jbPscaI4yS3P6gpuoDyHv81YDVC6Dmkhw==
+
 expo-file-system@~18.0.5:
   version "18.0.5"
   resolved "https://registry.npmjs.org/expo-file-system/-/expo-file-system-18.0.5.tgz"
@@ -4673,10 +4683,23 @@ expo-font@~13.0.1:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-json-utils@~0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/expo-json-utils/-/expo-json-utils-0.14.0.tgz#ad3cbbcb4fb22e4d23bf9fb19b611e36758861d2"
+  integrity sha512-xjGfK9dL0B1wLnOqNkX0jM9p48Y0I5xEPzHude28LY67UmamUyAACkqhZGaPClyPNfdzczk7Ej6WaRMT3HfXvw==
+
 expo-keep-awake@~14.0.1:
   version "14.0.1"
   resolved "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-14.0.1.tgz"
   integrity sha512-c5mGCAIk2YM+Vsdy90BlEJ4ZX+KG5Au9EkJUIxXWlpnuKmDAJ3N+5nEZ7EUO1ZTheqoSBeAo4jJ8rTWPU+JXdw==
+
+expo-manifests@~0.15.0:
+  version "0.15.4"
+  resolved "https://registry.yarnpkg.com/expo-manifests/-/expo-manifests-0.15.4.tgz#43627d00c5ef8163ffd1880e42093d342bc7e80f"
+  integrity sha512-Ki6+twRbm+HTX3L8larhOdDbSYPG3ojGnZepR/+TGg3JF/5yyscosDVY6c6z8xEGjKIjs1F813yq9yAfiPh8/g==
+  dependencies:
+    "@expo/config" "~10.0.4"
+    expo-json-utils "~0.14.0"
 
 expo-modules-autolinking@2.0.4:
   version "2.0.4"
@@ -4713,6 +4736,36 @@ expo-status-bar@~2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/expo-status-bar/-/expo-status-bar-2.0.0.tgz"
   integrity sha512-vxxdpvpNDMTEc5uTiIrbTvySKKUsOACmfl8OZuUdjNle05oGqwtq3v5YObwym/njSByjoyuZX8UpXBZnxvarwQ==
+
+expo-structured-headers@~4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/expo-structured-headers/-/expo-structured-headers-4.0.0.tgz#85537ae6daec61ebfb214ede4107c8841c6e16d0"
+  integrity sha512-uPiwZjWq3AdFGgY52+I2nGPrNa6izxAglymPXHUZLekZW290GqIUOk7MBNDD4sg4JwUbSi3gdxEurpEvuq+FSg==
+
+expo-updates-interface@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/expo-updates-interface/-/expo-updates-interface-1.0.0.tgz#b98c66b800d29561c62409556948b2af3d5316e5"
+  integrity sha512-93oWtvULJOj+Pp+N/lpTcFfuREX1wNeHtp7Lwn8EbzYYmdn37MvZU3TPW2tYYCZuhzmKEXnUblYcruYoDu7IrQ==
+
+expo-updates@~0.26.10:
+  version "0.26.10"
+  resolved "https://registry.yarnpkg.com/expo-updates/-/expo-updates-0.26.10.tgz#b39c77841b609b34e0e4e239f37e8d5e4da3c5e5"
+  integrity sha512-ETGUaSZRL7x72RH6MbZWRpyU9GFzCixIPNUT0kf/hcD07ojyHlW5hcwgc5ve565THSvhgiumz3yImKLbKBv2JA==
+  dependencies:
+    "@expo/code-signing-certificates" "0.0.5"
+    "@expo/config" "~10.0.4"
+    "@expo/config-plugins" "~9.0.10"
+    "@expo/spawn-async" "^1.7.2"
+    arg "4.1.0"
+    chalk "^4.1.2"
+    expo-eas-client "~0.13.0"
+    expo-manifests "~0.15.0"
+    expo-structured-headers "~4.0.0"
+    expo-updates-interface "~1.0.0"
+    fast-glob "^3.3.2"
+    fbemitter "^3.0.0"
+    ignore "^5.3.1"
+    resolve-from "^5.0.0"
 
 expo@~52.0.18:
   version "52.0.18"
@@ -5521,7 +5574,7 @@ ignore@^3.3.5:
   resolved "https://registry.npmjs.org/ignore/-/ignore-3.3.10.tgz"
   integrity sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==
 
-ignore@^5.1.9, ignore@^5.2.0:
+ignore@^5.1.9, ignore@^5.2.0, ignore@^5.3.1:
   version "5.3.2"
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.3.2.tgz"
   integrity sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==
